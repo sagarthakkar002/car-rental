@@ -21,60 +21,10 @@ export const NavLinks = [
   },
   {
     id: 4,
-    name: "BOOKING",
+    name: "CONTACT US",
     link: "/#booking",
   },
 ];
-
-// const Navbar = ({ theme, setTheme }) => {
-//   return (
-//     <div className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300">
-//       <div className="container">
-//         <div className="flex justify-between items-center">
-//           <div>
-//             <h1 className="text-3xl font-bold font-serif">BR-Rentals</h1>
-//           </div>
-//           <div className="hidden md:block">
-//             <ul className="flex items-center gap-8">
-//               {NavLinks.map((data) => {
-//                 return (
-//                   <li key={data.id} className="py-4">
-//                     <a
-//                       href={data.link}
-//                       className="
-//                       py-2
-//                       hover:border-b-2
-//                       hover:text-primary
-//                        hover:border-primary
-//                        transition-colors
-//                        duration-500 text-lg font-medium
-//                        "
-//                     >
-//                       {data.name}
-//                     </a>
-//                   </li>
-//                 );
-//               })}
-//               <div>
-//                 {theme === "dark" ? (
-//                   <BiSolidSun
-//                     className="text-2xl"
-//                     onClick={() => setTheme("light")}
-//                   />
-//                 ) : (
-//                   <BiSolidMoon
-//                     className="text-2xl"
-//                     onClick={() => setTheme("dark")}
-//                   />
-//                 )}
-//               </div>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 const Navbar = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -82,6 +32,7 @@ const Navbar = ({ theme, setTheme }) => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
   return (
     <div
       className="relative z-10 shadow-md w-full dark:bg-dark dark:text-white duration-300
@@ -97,7 +48,9 @@ const Navbar = ({ theme, setTheme }) => {
               {NavLinks.map(({ id, name, link }) => (
                 <li key={id} className="py-4">
                   <a
-                    href={link}
+                    href={`/car-rental${link}`}
+                    // href="#"
+                    // onClick={() => handleLinkClicked(link)}
                     className=" text-lg font-medium  hover:text-primary py-2 hover:border-b-2 hover:border-primary transition-colors duration-500  "
                   >
                     {name}
